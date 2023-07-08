@@ -11,7 +11,7 @@ The team will create a web project using CoPilot to generate code suggestions in
 ## Project Timeline
 The development phase will start on 10th July and end on 27th July 2023.
 
-# Contributing Guidelines
+## Contributing Guidelines
 This project is open to the community and anyone can contribute to it. To contribute to this project, ensure to follow the guidelines found here.
 
 

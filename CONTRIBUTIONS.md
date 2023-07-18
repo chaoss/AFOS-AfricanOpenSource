@@ -71,8 +71,10 @@ Now that your upstream is set up on your local machine, whenever you need to cre
 Thank you for your contributions! We appreciate your time and effort in making this project better.
 
 ## Resources
-- Project Design(Link to figma design)
-- Code of Conduct
+- Project Design -> https://www.figma.com/file/mALWb4e0vqfBbtRwop3g16/Afos?type=design&node-id=44-930&mode=design&t=XHbTvPKU9rzZ0NZU-0
+
+  
+- Code of Conduct -> https://github.com/chaoss/.github/blob/main/CODE_OF_CONDUCT.md
 
 
 

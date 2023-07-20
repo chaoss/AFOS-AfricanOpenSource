@@ -28,8 +28,8 @@ jobs:
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: public
-          path: public
+          name: build
+          path: build
 
   deploy:
     needs: build
@@ -41,8 +41,8 @@ jobs:
       - name: Download Build Artifact
         uses: actions/download-artifact@v3
         with:
-          name: public
-          path: public
+          name: build
+          path: build
 
       - name: remove old build
         uses: appleboy/ssh-action@master

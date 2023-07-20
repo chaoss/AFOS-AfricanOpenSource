@@ -1,0 +1,73 @@
+name: Deployment Pipeline
+on:
+  push:
+    branches:
+      - "*"
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [19.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Download Build Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: build
+          path: build
+
+      - name: remove old build
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.DROPLET_IP_ADDRESS }}
+          username: ${{ secrets.SSHUSERNAME }}
+          password: ${{ secrets.SSHPASSWORD }}
+          script: |
+            echo ${{ secrets.SSHPASSWORD }} | sudo -S rm -rf /var/www/gh-copilot/*
+            mkdir -p /var/www/gh-copilot/
+
+      - name: deploy new build
+        uses: garygrossgarten/github-action-scp@release
+        with:
+          host: ${{ secrets.DROPLET_IP_ADDRESS }}
+          username: ${{ secrets.SSHUSERNAME }}
+          password: ${{ secrets.SSHPASSWORD }}
+          local: ${{ github.workspace }}/build
+          remote: "/var/www/gh-copilot/"
+
+      - name: restart nginx
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.DROPLET_IP_ADDRESS }}
+          username: ${{ secrets.SSHUSERNAME }}
+          password: ${{ secrets.SSHPASSWORD }}
+          script: |
+            echo ${{ secrets.SSHPASSWORD }} | sudo -S systemctl restart nginx

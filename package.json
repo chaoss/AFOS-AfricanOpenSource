@@ -4,7 +4,7 @@
   "description": "The GitHub Copilot hackathon is a project created by CHAOSS Africa to demonstrate how GitHub CoPilot enhances and improves productivity.",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test",
+    "test": "echo \"Error: no test specified\"",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",

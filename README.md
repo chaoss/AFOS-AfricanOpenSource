@@ -22,4 +22,4 @@ The development phase will start on 10th July and end on 27th July 2023.
 
 ## Contributing Guidelines
 
-This project is open to the community and anyone can contribute to it. To contribute to this project, ensure to follow the guidelines found [here](https://github.com/chaoss/GitHub-Copilot-Hackathon-Project/blob/main/CONTRIBUTIONS.md).
+This project is open to the community and anyone can contribute to it. To contribute to this project, ensure to follow the guidelines found [here](https://github.com/chaoss/GitHub-Copilot-Hackathon-Project/blob/main/CONTRIBUTING.md).

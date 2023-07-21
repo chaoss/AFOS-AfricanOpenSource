@@ -28,8 +28,8 @@ jobs:
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: public
-          path: public
+          name: build
+          path: build
 
   deploy:
     needs: build
@@ -41,11 +41,11 @@ jobs:
       - name: Download Build Artifact
         uses: actions/download-artifact@v3
         with:
-          name: public
-          path: public
+          name: build
+          path: build
 
       - name: remove old build
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@0.1.10
         with:
           host: ${{ secrets.DROPLET_IP_ADDRESS }}
           username: ${{ secrets.SSHUSERNAME }}
@@ -64,7 +64,7 @@ jobs:
           remote: "/var/www/gh-copilot/"
 
       - name: restart nginx
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@0.1.10
         with:
           host: ${{ secrets.DROPLET_IP_ADDRESS }}
           username: ${{ secrets.SSHUSERNAME }}

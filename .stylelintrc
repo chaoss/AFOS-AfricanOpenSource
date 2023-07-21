@@ -1,0 +1,45 @@
+{
+  "extends": "stylelint-config-standard",
+  "plugins": ["stylelint-scss"],
+  "rules": {
+    "indentation": 2,
+    "string-quotes": "single",
+    "color-hex-case": "lower",
+    "color-hex-length": "short",
+    "color-named": "never",
+    "selector-list-comma-newline-after": "always-multi-line",
+    "declaration-block-trailing-semicolon": "always",
+    "declaration-colon-space-before": "never",
+    "declaration-colon-space-after": "always",
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": ["composes"]
+      }
+    ],
+    "comment-empty-line-before": null,
+    "font-family-no-missing-generic-family-keyword": null,
+    "comment-whitespace-inside": null,
+    "scss/at-extend-no-missing-placeholder": true,
+    "scss/at-function-parentheses-space-before": "never",
+    "scss/at-function-parentheses-space-after": "always-single-line",
+    "scss/at-import-no-partial-leading-underscore": true,
+    "scss/at-import-partial-extension-blacklist": ["scss"],
+    "scss/at-mixin-argumentless-call-parentheses": "never",
+    "scss/at-mixin-parentheses-space-before": "never",
+    "scss/at-mixin-parentheses-space-after": "always-single-line",
+    "scss/dollar-variable-colon-space-before": "never",
+    "scss/dollar-variable-colon-space-after": "always",
+    "scss/dollar-variable-no-missing-interpolation": true,
+    "scss/dollar-variable-empty-line-before": [
+      "always",
+      {
+        "except": ["first-nested"],
+        "ignore": ["after-comment", "inside-single-line-block"]
+      }
+    ],
+    "scss/percent-placeholder-pattern": "^[A-Z]+[a-z]+(?:_[A-Z]+[a-z]+)*$"
+  },
+  "ignoreFiles": ["**/*.js", "**/*.jsx", "**/*.json"],
+  "customSyntax": "stylelint-scss"
+}

@@ -73,7 +73,7 @@ $ git push -u origin my-new-branch
 Upon submitting a pull request, one of the maintainers will review your pull request and give feedback on changes or merge your pull requested.
 > Keep in mind to regularly synchronize your fork with the main branch. To do this, make sure you are in the project's root folder, and the branch should be the main branch. Run the command:
 ```
-$ git remote add upstream https://github.com/chaoss/chaoss-slack-bot.git
+$ git remote add upstream https://github.com/chaoss/GitHub-Copilot-Hackathon-Project.git
 ```
 
 Now that your upstream is set up on your local machine, whenever you need to create a new branch to make changes, make sure your main branch is in sync with the main repository by typing:
@@ -85,10 +85,10 @@ $ git push origin main
 Thank you for your contributions! We appreciate your time and effort in making this project better.
 
 ## Resources
-- Project Design -> https://www.figma.com/file/mALWb4e0vqfBbtRwop3g16/Afos?type=design&node-id=44-930&mode=design&t=XHbTvPKU9rzZ0NZU-0
+- [Project Design - Figma](https://www.figma.com/file/mALWb4e0vqfBbtRwop3g16/Afos?type=design&node-id=44-930&mode=design&t=XHbTvPKU9rzZ0NZU-0)
 
   
-- Code of Conduct -> https://github.com/chaoss/.github/blob/main/CODE_OF_CONDUCT.md
+- [Code of Conduct](https://github.com/chaoss/.github/blob/main/CODE_OF_CONDUCT.md)
 
 
 

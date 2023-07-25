@@ -65,7 +65,7 @@ $ npm run dev
 - Commit the change(s) using a [descriptive commit message](https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/) and [signing off the commit](https://github.com/chaoss/chaoss-slack-bot/blob/main/CONTRIBUTING.md#signing-off-on-commits)
 ```
 $ git add .
-$ git commit -s -m "descriptive commit message"
+$ git commit -s -m "descriptive commit message w/signoff"
 $ git push -u origin my-new-branch
 ```
 - Submit a pull request

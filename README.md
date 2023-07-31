@@ -4,6 +4,9 @@ The GitHub Copilot hackathon is a project created by CHAOSS Africa to demonstrat
 
 The team will create a web project using CoPilot to generate code suggestions in real time.
 
+## Project design
+- [figma](https://www.figma.com/file/mALWb4e0vqfBbtRwop3g16/Afos?type=design&node-id=543-3049&mode=design&t=Uc7cI6vMcv2Xzryg-0)
+
 ## Main Objectives
 
 - To demonstrate how GitHub CoPilot enhances productivity and reduces time it takes to deliver projects.
@@ -18,7 +21,7 @@ The team will create a web project using CoPilot to generate code suggestions in
 
 ## Project Timeline
 
-The development phase will start on 10th July and end on 27th July 2023.
+The development phase will start on 10th July and end in mid-August 2023.
 
 ## Contributing Guidelines
 

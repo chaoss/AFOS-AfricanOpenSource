@@ -1,5 +1,12 @@
+import Enhancement from "./components/Enhancement";
+
 function App() {
-  return <h1>Github Copilot Hackathon Project</h1>;
+    return (
+        <div>
+            <h1>Github Copilot Hackathon Project</h1>
+            <Enhancement />
+        </div>
+    );
 }
 
 export default App;

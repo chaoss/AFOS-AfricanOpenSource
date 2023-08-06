@@ -1,9 +1,10 @@
 import Enhancement from "./components/Enhancement";
+import Navbar from "./components/Navbar";
 
 function App() {
     return (
         <div>
-            <h1>Github Copilot Hackathon Project</h1>
+            <Navbar/>
             <Enhancement />
         </div>
     );

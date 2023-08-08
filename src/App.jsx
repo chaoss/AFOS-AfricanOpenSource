@@ -1,11 +1,12 @@
 import Empowerment from "./components/Empowerment";
 import Enhancement from "./components/Enhancement";
+import Navbar from "./components/Navbar";
 
 function App() {
     return (
         <div>
-            <h1>Github Copilot Hackathon Project</h1>
             <Empowerment />
+            <Navbar/>
             <Enhancement />
         </div>
     );

@@ -15,7 +15,7 @@ function Navbar() {
               onClick={() => setNavOpen(!navOpen)}
             >
               {navOpen ? (
-                <span className="HAMBURGER-ICON absolute top-0 right-0 px-7 py-7 material-symbols-outlined">
+                <span className="HAMBURGER-ICON absolute bg-white w-3/4 top-0 right-0 px-7 py-7 material-symbols-outlined">
                   close
                 </span>
               ) : (
@@ -29,7 +29,7 @@ function Navbar() {
                 navOpen ? "block" : "hidden"
               }`}
             >
-              <ul className="absolute mt-20  space-y-6 px-6 z-10 w-1/2 block top-0 right-0 h-screen bg-white Responsive-mobile-menu">
+              <ul className="absolute mt-20 space-y-6 px-6 z-10 w-3/4 block top-0 right-0 h-screen  bg-white Responsive-mobile-menu">
                 <li>
                   <a href="#" className="underline hover:underline-offset-4">
                     About Afos

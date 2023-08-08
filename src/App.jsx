@@ -3,13 +3,13 @@ import Enhancement from "./components/Enhancement";
 import Navbar from "./components/Navbar";
 
 function App() {
-    return (
-        <div>
-            <Empowerment />
-            <Navbar/>
-            <Enhancement />
-        </div>
-    );
+  return (
+    <div>
+      <Navbar />
+      <Empowerment />
+      <Enhancement />
+    </div>
+  );
 }
 
 export default App;

@@ -5,7 +5,7 @@ import logo from "../assets/images/afos-logo.svg";
 function Navbar() {
   const [navOpen, setNavOpen] = useState(false);
   return (
-    <div className="flex justify-between md:w-full p-5 md:px-10 text-green">
+    <div className="flex justify-between md:w-full p-5 md:px-10 text-green bg-gradient-to-r from-orange-50 to-lime-50">
       <a href="#"><img src={logo} alt="logo" className="w-20 h-10 " /></a>
       <nav>
         <section className="MOBILE-MENU md:hidden">
@@ -15,7 +15,7 @@ function Navbar() {
               onClick={() => setNavOpen(!navOpen)}
             >
               {navOpen ? (
-                <span className="HAMBURGER-ICON absolute bg-white w-3/4 top-0 right-0 px-7 py-7 material-symbols-outlined">
+                <span className="HAMBURGER-ICON absolute bg-white w-1/2 top-0 right-0 px-7 py-7 material-symbols-outlined">
                   close
                 </span>
               ) : (

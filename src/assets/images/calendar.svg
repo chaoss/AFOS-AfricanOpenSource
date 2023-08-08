@@ -1,0 +1,9 @@
+<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="solar:calendar-date-linear">
+<g id="Group">
+<path id="Vector" d="M2 12.4714C2 8.70044 2 6.81444 3.172 5.64344C4.343 4.47144 6.229 4.47144 10 4.47144H14C17.771 4.47144 19.657 4.47144 20.828 5.64344C22 6.81444 22 8.70044 22 12.4714V14.4714C22 18.2424 22 20.1284 20.828 21.2994C19.657 22.4714 17.771 22.4714 14 22.4714H10C6.229 22.4714 4.343 22.4714 3.172 21.2994C2 20.1284 2 18.2424 2 14.4714V12.4714Z" stroke="#1D1C1C" stroke-width="1.5"/>
+<path id="Vector_2" d="M7 4.47144V2.97144M17 4.47144V2.97144" stroke="#1D1C1C" stroke-width="1.5" stroke-linecap="round"/>
+<path id="Vector_3" d="M2.5 9.47144H21.5" stroke="#1D1C1C" stroke-width="1.5" stroke-linecap="round"/>
+</g>
+</g>
+</svg>

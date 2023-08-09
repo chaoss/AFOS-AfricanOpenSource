@@ -1,6 +1,7 @@
 import Empowerment from "./components/Empowerment";
 import Enhancement from "./components/Enhancement";
 import Newsletter from "./components/Newsletter";
+import Navbar from "./components/Navbar";
 
 function App() {
     return (
@@ -11,6 +12,16 @@ function App() {
             <Newsletter />
         </div>
     );
+
+
+function App() {
+  return (
+    <div>
+      <Navbar />
+      <Empowerment />
+      <Enhancement />
+    </div>
+  );
 }
 
 export default App;

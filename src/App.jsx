@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 function App() {
     return (
         <div>
-            <h1>Github Copilot Hackathon Project</h1>
+            <Navbar />
             <Empowerment />
             <Enhancement />
             <Newsletter />
@@ -14,14 +14,6 @@ function App() {
     );
 
 
-function App() {
-  return (
-    <div>
-      <Navbar />
-      <Empowerment />
-      <Enhancement />
-    </div>
-  );
 }
 
 export default App;

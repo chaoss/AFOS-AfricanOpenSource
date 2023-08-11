@@ -62,7 +62,7 @@ function ProjectCards({
                 </div>
 
                 {/* Button */}
-                <button className=" bg-[#323200] font-semibold text-[#ffffe3] w-full p-3 rounded-lg">
+                <button className=" bg-[#323200] hover:bg-[#323200da] font-semibold text-[#ffffe3] w-full p-3 rounded-lg">
                     See More
                 </button>
             </div>

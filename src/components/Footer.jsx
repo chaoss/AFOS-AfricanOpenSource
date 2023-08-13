@@ -1,8 +1,7 @@
 import logo from "../assets/images/afos-logo.svg";
 import twitter_icon from "../assets/images/twitter-icon.svg";
-import facebook_icon from "../assets/images/facebook-icon.svg";
-import instagram_icon from "../assets/images/instagram-icon.svg";
 import linkedin_icon from "../assets/images/linkedin-icon.svg";
+import youtube_icon from "../assets/images/youtube-icon.svg";
 
 function Footer() {
     return (
@@ -34,15 +33,14 @@ function Footer() {
                 <div className="pt-10 lg:p-0 mr-10 justify-center items-center">
                     <div>Social Media</div>
                     <div className="flex flex-wrap w-24 gap-5 py-5 ">
-                        <img src={twitter_icon} alt="twitter" />
-                        <img src={instagram_icon} alt="instagram" />
-                        <img src={facebook_icon} alt="facebook" />
-                        <img src={linkedin_icon} alt="linkedin" />
+                        <a href="https://twitter.com/chaoss_africa?lang=en"><img src={twitter_icon} alt="twitter" /></a>
+                        <a href="https://www.youtube.com/@CHAOSStube"><img src={youtube_icon} alt="youtube" /></a>
+                        <a href="https://www.linkedin.com/company/chaoss/"><img src={linkedin_icon} alt="linkedin" /></a>
                     </div>
                 </div>
             </div>
 
-            <hr className=" border-[#8A8A00]" />
+            <hr className="border-[#8A8A00]" />
 
             <div className="text-center py-5">© 2023 Afos</div>
         </div>

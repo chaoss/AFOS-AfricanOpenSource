@@ -2,6 +2,7 @@ import logo from "../assets/images/afos-logo.svg";
 import twitter_icon from "../assets/images/twitter-icon.svg";
 import linkedin_icon from "../assets/images/linkedin-icon.svg";
 import youtube_icon from "../assets/images/youtube-icon.svg";
+import slack_icon from "../assets/images/slack-icon.png";
 
 function Footer() {
     return (
@@ -23,9 +24,8 @@ function Footer() {
                         <div className="flex flex-col md:gap-4">
                             <div>Terms & Conditions</div>
                             <div>Privacy Policy</div>
-                            <div>Highlights</div>
+                            <div>Feedback</div>
                         </div>
-                        <div className="flex flex-col md:gap-4">Feedback</div>
                     </div>
                 </div>
 
@@ -35,6 +35,7 @@ function Footer() {
                     <div className="flex flex-wrap w-24 gap-5 py-5 ">
                         <a href="https://twitter.com/chaoss_africa?lang=en"><img src={twitter_icon} alt="twitter" /></a>
                         <a href="https://www.youtube.com/@CHAOSStube"><img src={youtube_icon} alt="youtube" /></a>
+                        <a href="https://www.linkedin.com/company/chaoss/" className="w-6 h-6"><img src={slack_icon} alt="slack" /></a>
                         <a href="https://www.linkedin.com/company/chaoss/"><img src={linkedin_icon} alt="linkedin" /></a>
                     </div>
                 </div>

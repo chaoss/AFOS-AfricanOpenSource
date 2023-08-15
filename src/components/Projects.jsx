@@ -5,7 +5,7 @@ import dropdown_icon from "../assets/images/dropdown.svg";
 
 function Projects() {
     return (
-        <div className="bg-[#ffffe3] w-full p-5 py-10 md:p-20 lg:p-32  justify-center items-center">
+        <div className="bg-[#ffffe3] w-full p-5 py-10 md:p-20 lg:px-36 justify-center items-center">
             {/* Search */}
             <div className="flex flex-wrap justify-center md:justify-end items-center gap-2 md:gap-4">
                 <div className="relative flex bg-[#e1e1ca] w-48 md:w-80 p-4 gap-1 justify-center items-center rounded-lg">

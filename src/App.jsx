@@ -1,3 +1,4 @@
+import Collaboration from "./components/Collaboration";
 import Empowerment from "./components/Empowerment";
 import Enhancement from "./components/Enhancement";
 import Footer from "./components/Footer";
@@ -11,6 +12,7 @@ function App() {
             <Navbar />
             <Projects />
             <Empowerment />
+            <Collaboration  />
             <Enhancement />
             <Newsletter />
             <Footer />

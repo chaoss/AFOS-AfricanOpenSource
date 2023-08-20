@@ -26,13 +26,13 @@ function Newsletter(){
             
                 <form>
                     <div className="flex space-x-2">
-                        <div className="w-96 h-12 bg-white rounded-lg border border-yellow-100 ">
+                        <div className="w-96 h-12 bg-white rounded-lg">
                             <input
                             type="email"
                             name="email"
                             id="email"
                             autoComplete="email"
-                            className=" md:96 w-100 h-12 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-[#8A8A00] "
+                            className=" md:96 w-full h-12 border-0 outline-none bg-transparent py-1.5 pl-4 text-gray-900 placeholder:text-[#8A8A00] "
                             placeholder="Enter Email"
                             />
                         </div>

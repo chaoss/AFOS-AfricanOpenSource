@@ -34,7 +34,6 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
 
     steps:
       - uses: actions/checkout@v3
@@ -45,7 +44,7 @@ jobs:
           path: build
 
       - name: remove old build
-        uses: appleboy/ssh-action@0.1.10
+        uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.DROPLET_IP_ADDRESS }}
           username: ${{ secrets.SSHUSERNAME }}
@@ -64,7 +63,7 @@ jobs:
           remote: "/var/www/gh-copilot/"
 
       - name: restart nginx
-        uses: appleboy/ssh-action@0.1.10
+        uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.DROPLET_IP_ADDRESS }}
           username: ${{ secrets.SSHUSERNAME }}

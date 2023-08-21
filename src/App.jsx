@@ -5,11 +5,13 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Newsletter from "./components/Newsletter";
 import Projects from "./components/Projects";
+import Hero from "./components/Hero";
 
 function App() {
     return (
         <div>
             <Navbar />
+            <Hero />
             <Projects />
             <Empowerment />
             <Collaboration  />

@@ -37,22 +37,37 @@ jobs:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
 
     steps:
+      - uses: actions/checkout@v3
       - name: Download Build Artifact
         uses: actions/download-artifact@v3
         with:
           name: build
           path: build
 
-      - name: Deploy to server
+      - name: remove old build
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.DROPLET_IP_ADDRESS }}
           username: ${{ secrets.SSHUSERNAME }}
           password: ${{ secrets.SSHPASSWORD }}
-          script_stop: true
           script: |
             echo ${{ secrets.SSHPASSWORD }} | sudo -S rm -rf /var/www/gh-copilot/*
             mkdir -p /var/www/gh-copilot/
-            scp -r ${{ github.workspace }}/build/* /var/www/gh-copilot/
-            sudo service nginx restart
 
+      - name: deploy new build
+        uses: garygrossgarten/github-action-scp@release
+        with:
+          host: ${{ secrets.DROPLET_IP_ADDRESS }}
+          username: ${{ secrets.SSHUSERNAME }}
+          password: ${{ secrets.SSHPASSWORD }}
+          local: ${{ github.workspace }}/build
+          remote: "/var/www/gh-copilot/"
+
+      - name: restart nginx
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.DROPLET_IP_ADDRESS }}
+          username: ${{ secrets.SSHUSERNAME }}
+          password: ${{ secrets.SSHPASSWORD }}
+          script: |
+            echo ${{ secrets.SSHPASSWORD }} | sudo -S systemctl restart nginx

@@ -45,7 +45,7 @@ function Navbar() {
                     Community
                   </a>
                 </li>
-                <button className="bg-yellow hover:bg-amber-400 rounded-md px-4 md:px-6 py-4 text-sm md:text-base font-semibold">
+                <button className="bg-[#FFD54F] hover:bg-amber-400 rounded-md px-4 md:px-6 py-4 text-sm md:text-base font-semibold">
                   Submit Project
                 </button>
               </ul>
@@ -54,7 +54,7 @@ function Navbar() {
         </section>
       </nav>
 
-      <div className="DESKTOP-MENU hidden md:flex list-none items-center ">
+      <div className="DESKTOP-MENU hidden md:flex list-none items-center font-semibold">
         <li>
           <a href="#" className="px-4 py-2 mr-4 hover:text-zinc-400">
             About Afos
@@ -70,7 +70,7 @@ function Navbar() {
             Community
           </a>
         </li>
-        <button className="bg-yellow hover:bg-amber-400 rounded-md px-6 py-4 font-semibold">
+        <button className="bg-[#FFD54F] hover:bg-amber-400 rounded-md px-6 py-3 font-semibold">
           Submit Project
         </button>
       </div>

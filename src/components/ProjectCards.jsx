@@ -1,71 +1,46 @@
-import github_image from "../assets/images/github-icon.svg";
-import star from "../assets/images/review-star.svg";
-import atlasin from "../assets/images/logos_atlassian.svg";
-import calendar from "../assets/images/calendar.svg";
-
 function ProjectCards({
     image,
     title,
     description,
-    tag,
-    launched_date,
-    last_updated,
+    project_link,
+    category
 }) {
     return (
-        <div className="w-full rounded-xl border-[1px] border-[#ecea8a] bg-[#ffffe3]">
-            {/* Image */}
-            <div className="relative ">
-                <img className="w-full rounded-t-xl" src={image} alt={title} />
-                <div className="absolute top-0 right-0">
-                    <img className="rounded-tr-xl" src={star} alt="star" />
-                </div>
+        <div className="w-full py-7 md:py-10 px-5 rounded-xl border-[1px] border-[#ecea8a] bg-[#ffffe3]">
+            {/* Project Logo */}
+            <div className="h-36 flex justify-center items-center bg-[#f6f3c3] border-[1px] border-[#E6E76D] rounded-xl">
+                <img className=" rounded-t-xl" src={image} alt={title} />
+
             </div>
 
-            {/* Content */}
-            <div className="p-4">
-                {/* Header */}
-                <div className="relative flex justify-between items-center">
-                    <img
-                        className="bg-[#0052CC] p-2 border-white border-2 rounded-lg w-10 h-[40px]  !z-10"
-                        src={atlasin}
-                        alt="icon"
-                    />
-                    <img
-                        className="w-10 h-10 absolute top-0 left-7 !-z-0"
-                        src={github_image}
-                        alt="icon"
-                    />
-                    <div className="bg-[#D1FFF7] rounded-full px-3 py-1 text-sm">
-                        {tag}
+            {/* Card Content */}
+            <div className="pt-6 h-52 overflow-hidden">
+
+                {/* Category */}
+                <div className="flex gap-2 items-center my-4">
+                    <div className="text-sm font-sans px-2 py-1 text-gray-600 font-medium bg-[#F1EEA6] rounded-md">
+                        Category - {category}
                     </div>
                 </div>
 
-                {/* Body */}
+                {/* Description */}
                 <div className="my-4">
-                    <div className="text-xl font-semibold ">{title}</div>
-                    <div className="text-sm text-gray-600 font-medium">
-                        {description}
+                    <div className="text-base text-gray-600 font-medium">
+                        {description.length < 200 ? description : description.substring(0, 200) + "..."}
                     </div>
                 </div>
 
-                {/* Footer */}
-                <div className="my-4">
-                    <div className="flex gap-2 items-center">
-                        {" "}
-                        <img src={calendar} alt="calendar" /> Launched date:{" "}
-                        {launched_date}
-                    </div>
-                    <div className="flex gap-1">
-                        <div className="text-gray-600">Last updated:</div>{" "}
-                        {last_updated}
-                    </div>
-                </div>
+            </div>
 
-                {/* Button */}
+            {/* View Project Button */}
+            <a href={project_link}
+                target="_blank"
+                rel="noreferrer"
+            >
                 <button className=" bg-[#323200] hover:bg-[#323200da] font-semibold text-[#ffffe3] w-full p-3 rounded-lg">
-                    See More
+                    View Project
                 </button>
-            </div>
+            </a>
         </div>
     );
 }

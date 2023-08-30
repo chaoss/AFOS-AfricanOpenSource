@@ -1,7 +1,13 @@
 import ProjectCards from "./ProjectCards";
-import image from "../assets/images/project-section-thumbnail.svg";
 import search_icon from "../assets/images/Search.svg";
 import dropdown_icon from "../assets/images/dropdown.svg";
+
+import chakara from "../assets/images/Project Logos/chakra.png";
+import chaoss from "../assets/images/Project Logos/chaoss.png";
+import osca from "../assets/images/Project Logos/os.png";
+import igboapi from "../assets/images/Project Logos/igboapi.png";
+import spaceyatech from "../assets/images/Project Logos/spaceyatech.png";
+import windui from "../assets/images/Project Logos/windui.png";
 
 function Projects() {
     return (
@@ -28,52 +34,46 @@ function Projects() {
             {/* Cards */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-2 py-4 justify-center ">
                 <ProjectCards
-                    image={image}
-                    description={"High Tech NC Speakers for wide range use"}
-                    last_updated={"10 Dec, 2022"}
-                    launched_date={"Nov 12"}
-                    tag={"Finance"}
-                    title={"Mojojo Speakers"}
+                    image={chakara}
+                    category="UI Library"
+                    description={"Chakra UI is a simple, modular and accessible component library that gives you the building blocks you need to build your React applications."}
+                    project_link={"https://chakra-ui.com/ "}
+
                 />
                 <ProjectCards
-                    image={image}
-                    description={"High Tech NC Speakers for wide range use"}
-                    last_updated={"10 Dec, 2022"}
-                    launched_date={"Nov 12"}
-                    tag={"Finance"}
-                    title={"Mojojo Speakers"}
+                    image={chaoss}
+                    category={"Community"}
+                    description={"A chapter of the CHAOSS Project focusing on creating initiatives and metrics around solving challenges of Open Source Communities in Africa."}
+                    project_link={"https://chaoss.community/"}
                 />
                 <ProjectCards
-                    image={image}
-                    description={"High Tech NC Speakers for wide range use"}
-                    last_updated={"10 Dec, 2022"}
-                    launched_date={"Nov 12"}
-                    tag={"Finance"}
-                    title={"Mojojo Speakers"}
+                    image={osca}
+                    category={"Community"}
+                    description={"A community of creative minds driving the Open Source movement in Africa."}
+                    project_link={"https://oscafrica.org/"}
+
                 />
                 <ProjectCards
-                    image={image}
-                    description={"High Tech NC Speakers for wide range use"}
-                    last_updated={"10 Dec, 2022"}
-                    launched_date={"Nov 12"}
-                    tag={"Finance"}
-                    title={"Mojojo Speakers"}
+                    image={igboapi}
+                    category={"API"}
+                    description={"Access thousands of Igbo words, audio pronunciations, and example sentences to power the future of Igbo technology."}
+                    project_link={"https://igboapi.com/"}
+
                 />
                 <ProjectCards
-                    image={image}
-                    description={"High Tech NC Speakers for wide range use"}
-                    last_updated={"10 Dec, 2022"}
-                    launched_date={"Nov 12"}
-                    tag={"Finance"}
-                    title={"Mojojo Speakers"}
+                    image={spaceyatech}
+                    category={"Tech Community"}
+                    description={"SpaceYaTech We are the fastest growing African Open-Source Community Looking To Change The Way Young Africans Get Started In Technology."}
+                    project_link={"https://github.com/SpaceyaTech"}
+    
+
                 />
                 <ProjectCards
-                    image={image}
-                    description={"High Tech NC Speakers for wide range use"}
-                    last_updated={"10 Dec, 2022"}
-                    launched_date={"Nov 12"}
-                    tag={"Finance"}
-                    title={"Mojojo Speakers"}
+                    image={windui}
+                    category={"UI Library"}
+                    description={"Beautiful and professionally crafted Windi UI components and templates."}
+                    project_link={"https://github.com/selemondev/windi-ui"}
+
                 />
             </div>
         </div>

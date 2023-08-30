@@ -65,6 +65,7 @@ function Projects() {
                     category={"Tech Community"}
                     description={"SpaceYaTech We are the fastest growing African Open-Source Community Looking To Change The Way Young Africans Get Started In Technology."}
                     project_link={"https://github.com/SpaceyaTech"}
+    
 
                 />
                 <ProjectCards

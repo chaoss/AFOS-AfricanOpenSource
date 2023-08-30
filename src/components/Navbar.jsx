@@ -5,7 +5,7 @@ import logo from "../assets/images/afos-logo.svg";
 function Navbar() {
   const [navOpen, setNavOpen] = useState(false);
   return (
-    <div className="flex justify-between md:w-full p-5 text-green">
+    <div className="flex justify-between md:w-full p-5 text-green bg-gradient-to-r from-orange-50 to-lime-50">
       <a href="#">
         <img src={logo} alt="logo" className="w-20 h-10" />
       </a>
@@ -27,7 +27,7 @@ function Navbar() {
               )}
             </button>
             <div className={` ${navOpen ? "block" : "hidden"}`}>
-              <div className="flex flex-col absolute text-green mt-5 items-center gap-12 py-6 w-1/2 left-[50%] h-screen bg-white Responsive-mobile-menu">
+              <div className="flex flex-col absolute text-green mt-5 z-10 items-center gap-12 py-6 w-1/2 left-[50%] h-screen bg-white Responsive-mobile-menu">
                 <a href="#" className="hover:underline underline-offset-8 hover:text-zinc-500">
                   About Afos
                 </a>
@@ -46,7 +46,7 @@ function Navbar() {
         </section>
       </nav>
 
-      <div className="DESKTOP-MENU hidden md:flex list-none items-center ">
+      <div className="DESKTOP-MENU hidden md:flex list-none items-center  font-semibold">
         <li>
           <a href="#" className="px-4 py-2 mr-4 text-green hover:text-zinc-500">
             About Afos
@@ -62,7 +62,7 @@ function Navbar() {
             Community
           </a>
         </li>
-        <button className="bg-yellow hover:bg-amber-400 rounded-md px-6 py-4 font-semibold">
+        <button className="bg-yellow hover:bg-amber-400 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 rounded-md px-6 py-3 font-semibold">
           Submit Project
         </button>
       </div>

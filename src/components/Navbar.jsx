@@ -5,17 +5,19 @@ import logo from "../assets/images/afos-logo.svg";
 function Navbar() {
   const [navOpen, setNavOpen] = useState(false);
   return (
-    <div className="flex justify-between md:w-full p-5 md:px-10 text-green">
-      <a href="#"><img src={logo} alt="logo" className="w-20 h-10 " /></a>
+    <div className="flex justify-between md:w-full p-5 text-green">
+      <a href="#">
+        <img src={logo} alt="logo" className="w-20 h-10" />
+      </a>
       <nav>
-        <section className="MOBILE-MENU md:hidden">
+        <section className="MOBILE-MENU md:hidden ">
           <div>
             <button
               className="md:hidden mt-2"
               onClick={() => setNavOpen(!navOpen)}
             >
               {navOpen ? (
-                <span className="HAMBURGER-ICON absolute bg-white w-3/4 top-0 right-0 px-7 py-7 material-symbols-outlined">
+                <span className="HAMBURGER-ICON absolute top-0 right-0 px-7 py-7 material-symbols-outlined">
                   close
                 </span>
               ) : (
@@ -24,53 +26,43 @@ function Navbar() {
                 </span>
               )}
             </button>
-            <div
-              className={`${
-                navOpen ? "block" : "hidden"
-              }`}
-            >
-              <ul className="absolute mt-20 space-y-6 px-6 z-10 w-1/2 block top-0 right-0 h-screen  bg-white Responsive-mobile-menu">
-                <li>
-                  <a href="#" className="underline hover:underline-offset-4">
-                    About Afos
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="underline hover:underline-offset-4">
-                    Projects
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="underline hover:underline-offset-4">
-                    Community
-                  </a>
-                </li>
-                <button className="bg-yellow hover:bg-amber-400 rounded-md px-4 md:px-6 py-4 text-sm md:text-base font-semibold">
+            <div className={` ${navOpen ? "block" : "hidden"}`}>
+              <div className="flex flex-col fixed text-green mt-5 items-center gap-12 py-6 w-1/2 left-[50%] h-screen bg-white Responsive-mobile-menu">
+                <a href="#" className="hover:underline underline-offset-8 hover:text-zinc-500">
+                  About Afos
+                </a>
+                <a href="#" className="hover:underline underline-offset-8 hover:text-zinc-500">
+                  Projects
+                </a>
+                <a href="#" className="hover:underline underline-offset-8 hover:text-zinc-500">
+                  Community
+                </a>
+                <button className="bg-yellow hover:bg-amber-400 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-200 rounded-md px-4 md:px-6 py-4 text-sm md:text-base font-semibold">
                   Submit Project
                 </button>
-              </ul>
+              </div>
             </div>
           </div>
         </section>
       </nav>
 
-      <div className="DESKTOP-MENU hidden md:flex list-none items-center ">
+      <div className="DESKTOP-MENU hidden md:flex list-none items-center  font-semibold">
         <li>
-          <a href="#" className="px-4 py-2 mr-4 hover:text-zinc-400">
+          <a href="#" className="px-4 py-2 mr-4 text-green hover:text-zinc-500">
             About Afos
           </a>
         </li>
         <li className="">
-          <a href="#" className="px-4 py-4 mr-4 hover:text-zinc-400">
+          <a href="#" className="px-4 py-4 mr-4 text-green hover:text-zinc-500">
             Projects
           </a>
         </li>
         <li>
-          <a href="#" className="px-4 py-2 mr-4 hover:text-zinc-400">
+          <a href="#" className="px-4 py-2 mr-4 text-green hover:text-zinc-500">
             Community
           </a>
         </li>
-        <button className="bg-yellow hover:bg-amber-400 rounded-md px-6 py-4 font-semibold">
+        <button className="bg-yellow hover:bg-amber-400 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 rounded-md px-6 py-3 font-semibold">
           Submit Project
         </button>
       </div>

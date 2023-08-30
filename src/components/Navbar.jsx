@@ -17,7 +17,7 @@ function Navbar() {
               onClick={() => setNavOpen(!navOpen)}
             >
               {navOpen ? (
-                <span className="HAMBURGER-ICON absolute top-0 right-0 px-7 py-7 material-symbols-outlined">
+                <span className="HAMBURGER-ICON absolute top-0 right-0 px-7 py-7 w-1/2 bg-white material-symbols-outlined">
                   close
                 </span>
               ) : (

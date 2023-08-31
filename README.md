@@ -1,6 +1,6 @@
-# GitHub-Copilot-Hackathon
+# CHAOSS-Github Copilot Project
 
-The GitHub Copilot hackathon is a project created by CHAOSS Africa to demonstrate how GitHub CoPilot enhances and improves productivity.
+The CHAOSS-Github Copilot project is a project by CHAOSS Africa to demonstrate how GitHub CoPilot enhances and improves developer productivity. The project involved creating a platform for showcasing Open Source projects build by Africans. 
 
 The team will create a web project using CoPilot to generate code suggestions in real time.
 

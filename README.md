@@ -30,5 +30,11 @@ Here's how to get started contributing during this Hacktoberfest:
     *   Development: Check out the [open issues](https://github.com/chaoss/AFOS-AfricanOpenSource/issues)
     *   Documentation
     *   [Product design](https://github.com/peculiaruc/AFOS-AfricanOpenSource/blob/main/CONTRIBUTING.md#resources):  Contact [Kingsly](https://github.com/iamkingsleey) if you need any guide. Please join our [Slack community channel](https://join.slack.com/t/chaoss-workspace/shared_invite/zt-2541kvhn5-Dhe~n0PjxBMpIfUtkRVSCw) for better communication.
+
+<!---->
+
 *   Ensure to go through the [Contributing Guidelines](https://github.com/chaoss/GitHub-Copilot-Hackathon-Project/blob/main/CONTRIBUTING.md)
+*   Resource:
+    *   [How to start a great open source](https://go.gitlab.com/Hm4BNB)
+    *   [How to write a good PR](https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/)
 *   Happy contributing!

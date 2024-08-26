@@ -43,17 +43,17 @@ Source Code
 
 - Fork and clone this project repository
 ```
-$ git clone https://github.com/<YOUR_USERNAME>/GitHub-Copilot-Hackathon-Project.git
+$ git clone https://github.com/chaoss/AFOS-AfricanOpenSource.git
 ```
 - Change to the project directory
 ```
-$ cd GitHub-Copilot-Hackathon-Project
+$ cd AFOS-AfricanOpenSource
 ```
 - Install the project dependencies
 ```
 $ npm install
 ```
-- Create a branch for your changes.
+- Create a branch for your work & changes.
 ```
 $ git checkout -b my-new-branch
 ```
@@ -73,7 +73,7 @@ $ git push -u origin my-new-branch
 Upon submitting a pull request, one of the maintainers will review your pull request and give feedback on changes or merge your pull requested.
 > Keep in mind to regularly synchronize your fork with the main branch. To do this, make sure you are in the project's root folder, and the branch should be the main branch. Run the command:
 ```
-$ git remote add upstream https://github.com/chaoss/GitHub-Copilot-Hackathon-Project.git
+$ git remote add upstream https://github.com/chaoss/AFOS-AfricanOpenSource.git
 ```
 
 Now that your upstream is set up on your local machine, whenever you need to create a new branch to make changes, make sure your main branch is in sync with the main repository by typing:

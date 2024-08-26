@@ -15,12 +15,14 @@ The team created a web project using CoPilot to generate code suggestions in rea
 We use the following tools and frameworks in this project:
 
 - Frontend Library: ReactJS
+- Type safety: TypeScript
 - CSS Framework: Tailwind CSS
 - Bundler/Build Tool: Vite
 - Test Runner: Vitest
+- Testing Framework: React Testing Library
 - Routing Implementation: React Router
-- Component Library: Flowbite
-- Icon Pack: Material Symbols by Google
+- Component Library: Shadcn/UI
+- Icon Pack: React icons
 
 ## Installation
 

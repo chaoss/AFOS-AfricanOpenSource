@@ -13,8 +13,9 @@ import {
   PaginationPrevious,
 } from "../ui/pagination";
 
-const Projects = () => {
-  const [projectsData, setProjectsData] = useState([]);
+const Projects = ({data}) => {
+  console.log(data)
+  const [projectsData, setProjectsData] = useState(data);
   const [pageNumber, setPageNumber] = useState(() => {
     // Initialize the page number using the value in local storage or default to 1
     const savedPageNumber = localStorage.getItem("currentPage");
@@ -166,7 +167,7 @@ const Projects = () => {
         {projectsData.map((project, index) => (
           <ProjectCards
             key={project.id}
-            image={project.logoimagelink + "?random=" + index + 1}
+            image={project.image}
             title={project.title}
             category={project.category}
             description={project.description}

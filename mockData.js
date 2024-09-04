@@ -7,36 +7,48 @@ import windui from "./src/assets/images/Project Logos/windui.png";
 
 export const projectCardsData = [
   {
+    id: "id-01",
+    title: "Chakra UI",
     image: chakara,
     category: "UI Library",
     description: "Chakra UI is a simple, modular and accessible component library that gives you the building blocks you need to build your React applications.",
     project_link: "https://chakra-ui.com/"
   },
   {
+    id: "id-02",
+    title: "CHAOSS Africa",
     image: chaoss,
     category: "Community",
     description: "A chapter of the CHAOSS Project focusing on creating initiatives and metrics around solving challenges of Open Source Communities in Africa.",
     project_link: "https://chaoss.community/"
   },
   {
+    id: "id-03",
+    title: "OSCA - Open Source Community Africa",
     image: osca,
     category: "Community",
     description: "A community of creative minds driving the Open Source movement in Africa.",
     project_link: "https://oscafrica.org/"
   },
   {
+    id: "id-04",
+    title: "Igbo API",
     image: igboapi,
     category: "API",
     description: "Access thousands of Igbo words, audio pronunciations, and example sentences to power the future of Igbo technology.",
     project_link: "https://igboapi.com/"
   },
   {
+    id: "id-05",
+    title: "SpaceYaTech",
     image: spaceyatech,
     category: "Tech Community",
     description: "SpaceYaTech is the fastest growing African Open-Source Community Looking To Change The Way Young Africans Get Started In Technology.",
     project_link: "https://github.com/SpaceyaTech"
   },
   {
+    id: "id-06",
+    title: "Windi UI",
     image: windui,
     category: "UI Library",
     description: "Beautiful and professionally crafted Windi UI components and templates.",

@@ -13,15 +13,28 @@ import {
   PaginationPrevious,
 } from "../ui/pagination";
 
-const Projects = ({data}) => {
-  console.log(data)
+const Projects = ({ data }) => {
   const [projectsData, setProjectsData] = useState(data);
+  const [filteredProjects, setFilteredProjects] = useState(data);
+  const [searchQuery, setSearchQuery] = useState("");
   const [pageNumber, setPageNumber] = useState(() => {
     // Initialize the page number using the value in local storage or default to 1
     const savedPageNumber = localStorage.getItem("currentPage");
     return savedPageNumber ? parseInt(savedPageNumber, 10) : 1;
   });
   const [totalPageNumber, setTotalPageNumber] = useState(undefined);
+
+  useEffect(() => {
+    setFilteredProjects(
+      projectsData.filter((project) =>
+        project.title.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    ); console.log(searchQuery)
+  }, [searchQuery, projectsData]);
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
 
   const getProjects = async () => {
     try {
@@ -146,12 +159,14 @@ const Projects = ({data}) => {
       <div className="flex flex-wrap justify-between items-center gap-2 md:gap-4">
         <div className="flex p-4 w-[170px] sm-[350px] md:w-[400px] justify-between gap-2 items-center rounded-lg border border-[#E1E1CA]">
           <button className="">
-            <img src={search_icon} />
+            <img src={search_icon} alt="search icon" />
           </button>
           <input
             className="text-xs sm:text-base text-gray-600 outline-none rounded-lg  w-full bg-transparent"
             type="text"
             placeholder="Search for projects"
+            value={searchQuery}
+            onChange={handleSearchChange}
           />
         </div>
         <div className="flex gap-2 justify-center items-center border border-[#E1E1CA] p-4 rounded-lg">
@@ -162,39 +177,47 @@ const Projects = ({data}) => {
         </div>
       </div>
 
-      {/* Cards */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-2 py-4 justify-center ">
-        {projectsData.map((project, index) => (
-          <ProjectCards
-            key={project.id}
-            image={project.image}
-            title={project.title}
-            category={project.category}
-            description={project.description}
-            project_link={project.link}
-          />
-        ))}
-      </div>
+      <>
+        {
+          filteredProjects.length > 0 ?
+          <>
+          {/* Cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-2 py-4 justify-center ">
+            {filteredProjects.map((project, index) => (
+              <ProjectCards
+                key={project.id}
+                image={project.image}
+                title={project.title}
+                category={project.category}
+                description={project.description}
+                project_link={project.link}
+              />
+            ))}
+          </div>
 
-      <Pagination>
-        <PaginationContent>
-          <PaginationItem>
-            <PaginationPrevious
-              className="cursor-pointer"
-              onClick={() => setPageNumber((page) => Math.max(1, page - 1))}
-            />
-          </PaginationItem>
-          {renderPagination()}
-          <PaginationItem>
-            <PaginationNext
-              className="cursor-pointer"
-              onClick={() =>
-                setPageNumber((page) => Math.min(totalPageNumber, page + 1))
-              }
-            />
-          </PaginationItem>
-        </PaginationContent>
-      </Pagination>
+          <Pagination>
+            <PaginationContent>
+              <PaginationItem>
+                <PaginationPrevious
+                  className="cursor-pointer"
+                  onClick={() => setPageNumber((page) => Math.max(1, page - 1))}
+                />
+              </PaginationItem>
+              {renderPagination()}
+              <PaginationItem>
+                <PaginationNext
+                  className="cursor-pointer"
+                  onClick={() =>
+                    setPageNumber((page) => Math.min(totalPageNumber, page + 1))
+                  }
+                />
+              </PaginationItem>
+            </PaginationContent>
+          </Pagination>
+        </> :
+        <p className="text-center mt-10 md:text-lg text-zinc-500">No projects found. Try a different search term.</p>
+        }
+      </>
     </div>
   );
 };

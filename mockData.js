@@ -109,25 +109,24 @@ export const projectCardsData = [
 ];
 
 export const categories = [
-  { category: "API", numOfProjects: 1 },
-  { category: "UI Library", numOfProjects: 2 },
-  { category: "Community", numOfProjects: 2 },
-  { category: "Hardware", numOfProjects: 0 },
-  { category: "Robotics", numOfProjects: 1 },
-  { category: "Artificial Intelligence", numOfProjects: 2 },
-  { category: "Hardware", numOfProjects: 1 },
-  { category: "Agriculture", numOfProjects: 0 },
-  { category: "eCommerce", numOfProjects: 0 },
+  { name: "API", count: 1 },
+  { name: "UI Library", count: 2 },
+  { name: "Community", count: 2 },
+  { name: "Robotics", count: 1 },
+  { name: "Artificial Intelligence", count: 2 },
+  { name: "Hardware", count: 1 },
+  { name: "Agriculture", count: 0 },
+  { name: "eCommerce", count: 0 },
 ];
 
 export const countries = [
-  { country: "Ghana", numOfProjects: 0 },
-  { country: "Nigeria", numOfProjects: 5 },
-  { country: "Angola", numOfProjects: 0 },
-  { country: "Tanzania", numOfProjects: 0 },
-  { country: "Benin", numOfProjects: 0 },
-  { country: "Congo", numOfProjects: 0 },
-  { country: "Tunisia", numOfProjects: 0 },
-  { country: "Kenya", numOfProjects: 1 },
-  { country: "Uganda", numOfProjects: 1 },
+  { name: "Ghana", count: 0 },
+  { name: "Nigeria", count: 5 },
+  { name: "Angola", count: 0 },
+  { name: "Tanzania", count: 0 },
+  { name: "Benin", count: 0 },
+  { name: "Congo", count: 0 },
+  { name: "Tunisia", count: 0 },
+  { name: "Kenya", count: 2 },
+  { name: "Uganda", count: 1 },
 ];

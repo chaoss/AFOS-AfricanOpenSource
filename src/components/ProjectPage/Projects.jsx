@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProjectCards from "../ProjectCards";
 import search_icon from "../../assets/images/Search.svg";
-import { ListFilter } from "lucide-react";
-
 import {
   Pagination,
   PaginationContent,
@@ -12,6 +10,8 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "../ui/pagination";
+import FilterSortModal from "./FilterSortModal";
+import { Cross2Icon } from "@radix-ui/react-icons";
 
 const Projects = ({ data }) => {
   const [projectsData, setProjectsData] = useState(data);
@@ -23,13 +23,14 @@ const Projects = ({ data }) => {
     return savedPageNumber ? parseInt(savedPageNumber, 10) : 1;
   });
   const [totalPageNumber, setTotalPageNumber] = useState(undefined);
+  const [selectedFields, setSelectedFields] = useState([]);
 
   useEffect(() => {
     setFilteredProjects(
       projectsData.filter((project) =>
         project.title.toLowerCase().includes(searchQuery.toLowerCase())
       )
-    ); console.log(searchQuery)
+    );
   }, [searchQuery, projectsData]);
 
   const handleSearchChange = (e) => {
@@ -146,6 +147,27 @@ const Projects = ({ data }) => {
     return pages;
   };
 
+  const removeFilter = (filter) => {
+    setSelectedFields((prevFields) =>
+      prevFields.filter((item) => item !== filter)
+    );
+  };
+
+  useEffect(() => {
+    if (selectedFields.length !== 0) {
+      setFilteredProjects(
+        projectsData.filter((project) => {
+          return (
+            selectedFields.includes(project.category) ||
+            selectedFields.includes(project.country)
+          );
+        })
+      );
+    } else {
+      setFilteredProjects(projectsData);
+    }
+  }, [selectedFields]);
+
   return (
     <div className="bg-[#ffffe3] w-full p-5 py-10 md:p-20 lg:px-36 justify-center items-center">
       {/* title */}
@@ -169,54 +191,85 @@ const Projects = ({ data }) => {
             onChange={handleSearchChange}
           />
         </div>
-        <div className="flex gap-2 justify-center items-center border border-[#E1E1CA] p-4 rounded-lg">
-          <div>
-            <ListFilter />
-          </div>
-          <p className="font-medium text-base">Filter</p>
-        </div>
+        <FilterSortModal
+          selectedFields={selectedFields}
+          setSelectedFields={setSelectedFields}
+          projectsData={projectsData}
+          setFilteredProjects={setFilteredProjects}
+        />
       </div>
 
-      <>
-        {
-          filteredProjects.length > 0 ?
-          <>
-          {/* Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-2 py-4 justify-center ">
-            {filteredProjects.map((project, index) => (
-              <ProjectCards
-                key={project.id}
-                image={project.image}
-                title={project.title}
-                category={project.category}
-                description={project.description}
-                project_link={project.link}
-              />
-            ))}
+      {/* Filters */}
+      {selectedFields.length !== 0 && (
+        <div className="mt-5 flex mb-8 items-center flex-wrap">
+          {selectedFields.map((field, index) => (
+            <div
+              key={index}
+              className="p-1 rounded-full max-lg:text-sm lg:py-3 lg:px-4 bg-[#FFD54F] mr-2 lg:rounded-lg text-[#323200] font-medium flex items-center justify-center"
+            >
+              <span>{field}</span>
+              <div
+                className="bg-[#323200] rounded-full ml-2 p-1 cursor-pointer"
+                onClick={() => removeFilter(field)}
+              >
+                <Cross2Icon className=" h-2 w-2  lg:h-3 lg:w-3 text-[#FFD54F]" />
+              </div>
+            </div>
+          ))}
+          <hr className="h-[40px] w-[2px] bg-[#E1E1C9] mr-3 ml-1" />
+          <div className="flex flex-col">
+            <span className="text-[#838364] text-sm  ">Showing</span>{" "}
+            <span>{filteredProjects.length} projects</span>
           </div>
+        </div>
+      )}
 
-          <Pagination>
-            <PaginationContent>
-              <PaginationItem>
-                <PaginationPrevious
-                  className="cursor-pointer"
-                  onClick={() => setPageNumber((page) => Math.max(1, page - 1))}
+      <>
+        {filteredProjects.length > 0 ? (
+          <>
+            {/* Cards */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-2 py-4 justify-center ">
+              {filteredProjects.map((project, index) => (
+                <ProjectCards
+                  key={project.id}
+                  image={project.image}
+                  title={project.title}
+                  category={project.category}
+                  description={project.description}
+                  project_link={project.link}
                 />
-              </PaginationItem>
-              {renderPagination()}
-              <PaginationItem>
-                <PaginationNext
-                  className="cursor-pointer"
-                  onClick={() =>
-                    setPageNumber((page) => Math.min(totalPageNumber, page + 1))
-                  }
-                />
-              </PaginationItem>
-            </PaginationContent>
-          </Pagination>
-        </> :
-        <p className="text-center mt-10 md:text-lg text-zinc-500">No projects found. Try a different search term.</p>
-        }
+              ))}
+            </div>
+
+            <Pagination>
+              <PaginationContent>
+                <PaginationItem>
+                  <PaginationPrevious
+                    className="cursor-pointer"
+                    onClick={() =>
+                      setPageNumber((page) => Math.max(1, page - 1))
+                    }
+                  />
+                </PaginationItem>
+                {renderPagination()}
+                <PaginationItem>
+                  <PaginationNext
+                    className="cursor-pointer"
+                    onClick={() =>
+                      setPageNumber((page) =>
+                        Math.min(totalPageNumber, page + 1)
+                      )
+                    }
+                  />
+                </PaginationItem>
+              </PaginationContent>
+            </Pagination>
+          </>
+        ) : (
+          <p className="text-center mt-10 md:text-lg text-zinc-500">
+            No projects found. Try a different search term.
+          </p>
+        )}
       </>
     </div>
   );

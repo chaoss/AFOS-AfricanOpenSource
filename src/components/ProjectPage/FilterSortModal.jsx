@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import * as ScrollArea from "@radix-ui/react-scroll-area";
-import "./index.css";
 import { ListFilter } from "lucide-react";
 import search_icon from "../../assets/images/Search.svg";
 import * as Tabs from "@radix-ui/react-tabs";

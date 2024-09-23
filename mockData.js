@@ -120,8 +120,8 @@ export const categories = [
 ];
 
 export const countries = [
-  { name: "Ghana", count: 0 },
-  { name: "Nigeria", count: 5 },
+  { name: "Ghana", count: 1 },
+  { name: "Nigeria", count: 6 },
   { name: "Angola", count: 0 },
   { name: "Tanzania", count: 0 },
   { name: "Benin", count: 0 },

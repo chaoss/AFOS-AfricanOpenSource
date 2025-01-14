@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from "react";
 import ProjectCards from "../ProjectCards";
 import search_icon from "../../assets/images/Search.svg";
@@ -170,7 +172,7 @@ const Projects = ({ data }) => {
     }
   }, [selectedFields]);
   return (
-    <div className="bg-[#ffffe3] w-full p-5 py-10 md:p-20 lg:px-36 justify-center items-center">
+   <div className="bg-[#ffffe3] w-full p-5 py-10 md:p-20 lg:px-36 justify-center items-center">
       {/* title */}
       <div className="mb-8">
         <h1 className="font-semibold text-3xl sm:text-4xl md:text-5xl">
@@ -189,15 +191,13 @@ const Projects = ({ data }) => {
             type="text"
             placeholder="Search for projects"
             value={searchQuery}
-            onChange={handleSearchChange}
-          />
+            onChange={handleSearchChange} />
         </div>
         <FilterSortModal
           selectedFields={selectedFields}
           setSelectedFields={setSelectedFields}
           projectsData={projectsData}
-          setFilteredProjects={setFilteredProjects}
-        />
+          setFilteredProjects={setFilteredProjects} />
       </div>
 
       {/* Filters */}
@@ -237,8 +237,7 @@ const Projects = ({ data }) => {
                   title={project.title}
                   category={project.category}
                   description={project.description}
-                  project_link={project.link}
-                />
+                  project_link={project.link} />
               ))}
             </div>
 
@@ -247,21 +246,14 @@ const Projects = ({ data }) => {
                 <PaginationItem>
                   <PaginationPrevious
                     className="cursor-pointer"
-                    onClick={() =>
-                      setPageNumber((page) => Math.max(1, page - 1))
-                    }
-                  />
+                    onClick={() => setPageNumber((page) => Math.max(1, page - 1))} />
                 </PaginationItem>
                 {renderPagination()}
                 <PaginationItem>
                   <PaginationNext
                     className="cursor-pointer"
-                    onClick={() =>
-                      setPageNumber((page) =>
-                        Math.min(totalPageNumber, page + 1)
-                      )
-                    }
-                  />
+                    onClick={() => setPageNumber((page) => Math.min(totalPageNumber, page + 1)
+                    )} />
                 </PaginationItem>
               </PaginationContent>
             </Pagination>
@@ -272,18 +264,15 @@ const Projects = ({ data }) => {
           </p>
         )}
       </>
-          />
+ 
+    <div className="flex gap-2 justify-center items-center border border-[#E1E1CA] p-4 rounded-lg">
+        <div>
+          <ListFilter />
         </div>
-        <div className="flex gap-2 justify-center items-center border border-[#E1E1CA] p-4 rounded-lg">
-          <div>
-            <ListFilter />
-          </div>
-          <p className="font-medium text-base">Filter</p>
-        </div>
+        <p className="font-medium text-base">Filter</p>
       </div>
-
-      {/* Cards */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-2 py-4 justify-center ">
+     
+     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-2 py-4 justify-center ">
         {projectsData.map((project, index) => (
           <ProjectCards
             key={project.id}
@@ -291,32 +280,28 @@ const Projects = ({ data }) => {
             title={project.title}
             category={project.category}
             description={project.description}
-            project_link={project.link}
-          />
+            project_link={project.link} />
         ))}
       </div>
-
-      <Pagination>
-        <PaginationContent>
-          <PaginationItem>
-            <PaginationPrevious
-              className="cursor-pointer"
-              onClick={() => setPageNumber((page) => Math.max(1, page - 1))}
-            />
-          </PaginationItem>
-          {renderPagination()}
-          <PaginationItem>
-            <PaginationNext
-              className="cursor-pointer"
-              onClick={() =>
-                setPageNumber((page) => Math.min(totalPageNumber, page + 1))
-              }
-            />
-          </PaginationItem>
-        </PaginationContent>
-      </Pagination>
-    </div>
+        <Pagination>
+          <PaginationContent>
+            <PaginationItem>
+              <PaginationPrevious
+                className="cursor-pointer"
+                onClick={() => setPageNumber((page) => Math.max(1, page - 1))} />
+            </PaginationItem>
+            {renderPagination()}
+            <PaginationItem>
+              <PaginationNext
+                className="cursor-pointer"
+                onClick={() => setPageNumber((page) => Math.min(totalPageNumber, page + 1))} />
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination>
+      </div> 
   );
+
 };
+
 
 export default Projects;

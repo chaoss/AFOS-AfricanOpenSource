@@ -1,4 +1,3 @@
-import React from "react";
 import heroImage from "../assets/images/hero-image.png";
 import { Link } from "react-router-dom";
 
@@ -15,7 +14,7 @@ function Hero() {
           <button className="bg-white font-semibold rounded-md px-6 py-2 shadow-md">
             Submit Project
           </button>
-          <button className="bg-green-800 font-semibold rounded-md text-white px-12 mt-2 py-2 shadow-md">
+          <button className="bg-[#323200] font-semibold rounded-md text-white px-12 mt-2 py-2 shadow-md">
             <Link
               to="/projects"
               className="underline-offset-8 hover:text-zinc-500"

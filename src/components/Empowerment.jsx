@@ -1,5 +1,6 @@
 import empowerment_text from "../assets/images/empowerment-text.svg";
 import afos_logo from "../assets/images/afos-faded-logo.svg";
+import { Link } from "react-router-dom";
 
 function Empowerment() {
     return (
@@ -18,7 +19,13 @@ function Empowerment() {
                         to grow the African open source ecosystem
                     </div>
                     <button className="bg-white hover:bg-slate-100 mt-5 p-3 px-10 rounded-xl font-semibold z-10">
-                        Find Projects
+                        
+                        <Link
+                                          to="/projects"
+                                          className="underline-offset-8 hover:text-zinc-500"
+                                        >
+                                          Find projects
+                                        </Link>
                     </button>
                 </div>
             </div>

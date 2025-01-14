@@ -42,7 +42,7 @@ function Navbar() {
                   Projects
                 </Link>
                 <a
-                  href="#"
+                  href="https://chaoss.community/"
                   className="hover:underline underline-offset-8 hover:text-zinc-500"
                 >
                   Community
@@ -58,7 +58,7 @@ function Navbar() {
 
       <div className="DESKTOP-MENU hidden md:flex list-none items-center  font-semibold">
         <li>
-          <a href="#" className="px-4 py-2 mr-4 text-green hover:text-zinc-500">
+          <a href="https://github.com/chaoss/AFOS-AfricanOpenSource" className="px-4 py-2 mr-4 text-green hover:text-zinc-500" target="blank">
             About Afos
           </a>
         </li>
@@ -71,7 +71,7 @@ function Navbar() {
           </Link>
         </li>
         <li>
-          <a href="#" className="px-4 py-2 mr-4 text-green hover:text-zinc-500">
+          <a href="https://chaoss.community/" className="px-4 py-2 mr-4 text-green hover:text-zinc-500" target="blank">
             Community
           </a>
         </li>
